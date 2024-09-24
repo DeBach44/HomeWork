@@ -9,3 +9,6 @@ mutable_list[0] = 'x'
 mutable_list.append(4)
 mutable_list.extend(['e', 7, 8])
 print(mutable_list)
+print("Кортеж не поддерживает обращение по элементам")
+immutable_var[0] = "x"
+print(immutable_var)
