@@ -8,7 +8,7 @@ class House:
         self.number_of_floors = number_of_floors
 
     def go_to(self, new_floor):
-        for the_floor in range(1, new_floor + 1):  # Поребор этажей до нужного
+        for the_floor in range(1, new_floor + 1):  # Перебор этажей до нужного
             if 0 < new_floor < self.number_of_floors:  # Проверка на существование этажа
                 print(the_floor)  # Вывод текущего этажа
 
