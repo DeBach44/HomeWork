@@ -16,10 +16,10 @@ class House:
                 print("Такого этожа не существует")
                 break  # Остановка программы
 
-    def __len__(self): # Возврат количества этажей
+    def __len__(self): # Возврат количества этажей type int
         return self.number_of_floors
 
-    def __str__(self): # Возврат наименования и количества этажей
+    def __str__(self): # Возврат наименования и количества этажей type str
         return f"Название: {self.name}, кол-во этажей: {self.number_of_floors}"
 
 
