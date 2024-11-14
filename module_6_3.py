@@ -38,9 +38,9 @@ class Bird(Animal):
     
     
     beak = True
-    
-    def __init__(self,*args):
-        super().__init__()
+
+    def __init__(self, spead):
+        super().__init__(spead)
 
     def lay_eggs(self):
         from random import randint as rdm
@@ -52,8 +52,8 @@ class Bird(Animal):
 class AquaticAnimal(Animal):
     _DEGREE_OF_DANGER = 3
 
-    def __init__(self, *args):
-        super().__init__()
+    def __init__(self, spead):
+        super().__init__(spead)
 
     def dive_in(self, dz):
         super()._cords[2] = (abs(dz) * self.speed)/2
@@ -63,12 +63,12 @@ class AquaticAnimal(Animal):
 class PoisonousAnimal(Animal):
     _DEGREE_OF_DANGER = 8
 
-    def __init__(self, *args):
-        super().__init__()
+    def __init__(self, spead):
+        super().__init__(spead)
 #________________________________________________________________________
 class Duckbill(Bird,PoisonousAnimal, AquaticAnimal,):
-    def __init__(self, *args):
-        super().__init__()
+    def __init__(self, spead):
+        super().__init__(spead)
 
     sound = "Click-click-click"
 
