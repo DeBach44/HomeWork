@@ -10,7 +10,6 @@ class Product:
     def __str__(self):
         return f"{self.name}, {self.weight}, {self.category}"
 
-
 # _________________________________________________________________________
 class Shop:
     __file_name = 'products.txt'
@@ -25,7 +24,7 @@ class Shop:
         file = open(self.__file_name, 'a')
         for i in products: 
             if i.name not in self.get_products():#_Проверка
-                file.write(f'\n {i.name},{i.weight},{i.category}')
+                file.write(f'{i.name},{i.weight},{i.category}\n')
             else:
                 print(f'{i.name},{i.weight},{i.category}: уже есть в магазине')
         file.close()
@@ -41,3 +40,4 @@ print(p2)  # __str__
 s1.add(p1, p2, p3)
 
 print(s1.get_products())
+
