@@ -16,6 +16,8 @@ def custom_write(file_name, strings):#file_name - название фала
         file.write(f"{str_}\n")#Добавление строки в файл
         string_positions[(str_num,cursor)] = str_
     return string_positions
+    file.close
+
 #_______________________________________________________________________
 info = [
     'Text for tell.',
