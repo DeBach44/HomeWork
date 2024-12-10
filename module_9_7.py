@@ -5,6 +5,8 @@ def is_prime(func):
     def wrapper(*args):
         f = func(*args)
         prime = True
+        if f <= 1:
+            return (f"Сумма чисел меньше или равно 1")
         for i in range(2,f):
             if f % i == 0:
                 prime = False
