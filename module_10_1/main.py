@@ -1,5 +1,5 @@
 # DeBach
-# module_9_6 "Декораторы в Python"
+# module_10_1 "Потоковая запись в файлы"
 
 from threading import Thread
 from time import sleep
