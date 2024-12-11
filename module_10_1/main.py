@@ -23,22 +23,21 @@ stop_time_1 = datetime.now()
 end_time_1 = stop_time_1 - start_time_1
 print(f"Работа потоков {end_time_1}")
 
-start_time_2 = datetime.now()
+
 thr_1 = Thread(target=write_words, args=(10, "example5.txt"))
 thr_2 = Thread(target=write_words, args=(30, "example6.txt"))
 thr_3 = Thread(target=write_words, args=(200, "example7.txt"))
 thr_4 = Thread(target=write_words, args=(100, "example8.txt"))
 
-thr_1.start()
-thr_2.start()
-thr_3.start()
-thr_4.start()
+thr_list = [thr_1,thr_2,thr_3,thr_4]
 
-thr_1.join()
-thr_2.join()
-thr_3.join()
-thr_4.join()
+start_time = datetime.now()
+for i in thr_list:
+    i.start()
 
-stop_time_2 = datetime.now()
-end_time_2 = stop_time_2 - start_time_2
-print(f"Работа потоков {end_time_2}")
+for i in thr_list:
+    i.join()
+
+stop_time = datetime.now()
+end_time = stop_time - start_time
+print(f"Работа потоков {end_time}")
