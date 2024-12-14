@@ -1,5 +1,5 @@
 # DeBach
-# module_10_1 "Потоковая запись в файлы"
+# module_10_2 "За честь и отвагу!":
 import threading
 import time
 
@@ -12,16 +12,13 @@ class Knight(threading.Thread):
         self.power = power
         self.enemy = 100
         self.days = 0
-        
 
-
-    def fight(self, enemy = 100,days = 0):
+    def fight(self, enemy=100, days=0):
         while self.enemy > 0:
             self.enemy -= self.power
             self.days += 1
             print(f"{self.name} сражается {self.days} день(дня)..., осталось {self.enemy} воинов.")
             time.sleep(1)
-
 
     def run(self):
         print(f"{self.name}, на нас напали!")
