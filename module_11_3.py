@@ -22,13 +22,10 @@ cat1 = Cats()
 def introspection_info(obj):
     info = dict()
     info['type'] = type(obj).__name__
-    info['attributes'] = dir(obj)
-    list_metods = list()
-    for metod in dir(obj):
-        attr = getattr(obj,metod)
-        if callable(attr):
-            list_metods.append(attr.__name__)
-    info['methods'] = list_metods
+    list_attributes = [method for method in dir(obj) if not callable(getattr(obj,method))]
+    info['attributes'] = list_attributes
+    list_methods = [method for method in dir(obj) if callable(getattr(obj,method))]
+    info['methods'] = list_methods
     info['module'] = inspect.getmodule(obj)
     return info
 
