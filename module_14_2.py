@@ -35,10 +35,10 @@ cursor.execute('CREATE INDEX IF NOT EXISTS idx_email ON Users (email)')
 # cursor.execute('DELETE FROM Users WHERE id = 6') #Удаление
 
 cursor.execute('SELECT COUNT(*) FROM Users') #Запрос количества записей
-total1 = cursor.fetchone()[0]
+total_users = cursor.fetchone()[0]
 
 cursor.execute('SELECT SUM(balance) FROM Users') #Сумма балансов
-total2 = cursor.fetchone()[0]
+all_balances = cursor.fetchone()[0]
 
 print(all_balances / total_users)
 
